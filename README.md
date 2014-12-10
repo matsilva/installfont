@@ -1,6 +1,8 @@
 installfont
 ===========
 
+**currently under construction...**
+
 Nodejs module for installing fonts. 
 This module is not tightly coupled to any specific font libraries or apis. 
 It also is not opinionated about how you get the fonts on your machine.
