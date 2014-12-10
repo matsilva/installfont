@@ -28,3 +28,6 @@ installfont('path/to/your/font.ttf', function(err) {
 
 
 ```
+
+### Options
+
