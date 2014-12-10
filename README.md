@@ -3,7 +3,7 @@ installfont
 
 **currently under construction...**
 
-Nodejs module for installing fonts. 
+Nodejs module for installing system fonts. 
 This module is not tightly coupled to any specific font libraries or apis. 
 It also is not opinionated about how you get the fonts on your machine.
 installfont is currently scoped to windows operation system. 
