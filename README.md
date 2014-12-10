@@ -28,7 +28,7 @@ installfont('path/to/your/font.ttf', function(err) {
 
 ```
 
-I*nstalling all font files within a specified directory*
+*Installing all font files within a specified directory*
 
 ```javascript
 var installfont = require('installfont');
