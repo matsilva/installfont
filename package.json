@@ -1,0 +1,24 @@
+{
+  "name": "installfont",
+  "version": "0.0.1",
+  "description": "Nodejs module for installing system fonts",
+  "author": "Mat Silva <askmatsilva@gmail.com>",
+  "scripts": {
+    "test": "mocha spec"
+  },
+  "main": "lib/installfont.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matsilva/installfont"
+  },
+  "bugs": {
+    "url": "https://github.com/matsilva/installfont/issues"
+  },
+  "keywords": [
+    "font",
+    "install font",
+    "windows font"
+  ],
+  "private": false,
+  "license": "MIT"
+}
