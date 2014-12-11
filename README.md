@@ -34,7 +34,7 @@ installfont('path/to/your/font.ttf', function(err) {
 var installfont = require('installfont');
 
 installfont('path/to/dir/containing/fonts', function(err) {
-  if(err) console.log(err, err.stack);;
+  if(err) console.log(err, err.stack);
   //handle callback tasks here
 });
 ```
@@ -52,7 +52,7 @@ var options = {
 };
 
 installfont('path/to/dir/containing/fonts', function(err) {
-  if(err) console.log(err, err.stack);;
+  if(err) console.log(err, err.stack);
   //handle callback tasks here
 }, options);
 ```
