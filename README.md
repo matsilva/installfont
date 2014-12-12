@@ -21,7 +21,7 @@ Open your command line and run `npm install installfont`
 var installfont = require('installfont');
 
 installfont('path/to/your/font.ttf', function(err) {
-  if(err) console.log(err, err.stack);;
+  if(err) console.log(err, err.stack);
   //handle callback tasks here
 });
 
