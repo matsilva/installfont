@@ -32,13 +32,12 @@
 
         <section id="main_content">
           <h3>
-<a id="tell-it-where-your-font-files-are-located-and-let-it-take-care-of-the-rest" class="anchor" href="#tell-it-where-your-font-files-are-located-and-let-it-take-care-of-the-rest" aria-hidden="true"><span class="octicon octicon-link"></span></a>...tell it where your font file(s) are located and let it take care of the rest!</h3>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h3>
 
-<p>This module is not tightly coupled to any specific font libraries or apis. It also is not opinionated about how you get the fonts on your machine. installfont is currently scoped to windows operating system. You can find a mac solution here: FTPM</p>
+<p><code>npm install installfont</code></p>
 
-<p>Open your command line and run <code>npm install installfont</code></p>
-
-<p>Fast start</p>
+<h3>
+<a id="quick-usage" class="anchor" href="#quick-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quick Usage</h3>
 
 <div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> installfont <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>installfont<span class="pl-pds">'</span></span>);
 
@@ -46,6 +45,11 @@ installfont(<span class="pl-s1"><span class="pl-pds">'</span>path/to/your/font.t
   <span class="pl-k">if</span>(err) <span class="pl-en">console</span><span class="pl-s3">.log</span>(err, err.stack);;
   <span class="pl-c">//handle callback tasks here</span>
 });</pre></div>
+
+<p>This module is not tightly coupled to any specific font libraries or apis.
+It also is not opinionated about how you get the fonts on your machine.
+installfont is currently scoped to windows operating system.
+You can find a mac solution here: <a href="http://heldr.github.io/ftpm/">FTPM</a></p>
         </section>
 
         <footer>
