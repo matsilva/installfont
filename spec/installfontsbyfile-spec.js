@@ -1,14 +1,14 @@
 var installfont = require('../lib/installfont');
-var path = require('path');
-var assert = require("assert");
-var fs = require('fs');
+var path        = require('path');
+var assert      = require("assert");
+var fs          = require('fs');
 
 describe('Install single specified font', function(){
   it('should install specified font and leave it in original directory', function(done){
     this.timeout(0);
     if(!fs.existsSync('./spec/temp-fonts-3')) fs.mkdirSync('./spec/temp-fonts-3');
-    var tempFiles = [];
-    var tempFilesByName =[];
+    var tempFiles       = [];
+    var tempFilesByName = [];
 
     fs.createReadStream('./spec/spec-fonts3/Martyric_PersonalUse.ttf')
       .pipe(fs.createWriteStream('./spec/temp-fonts-3/Martyric_PersonalUse.ttf'));
