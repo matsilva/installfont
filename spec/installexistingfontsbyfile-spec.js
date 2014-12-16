@@ -2,6 +2,11 @@ var installfont = require('../lib/installfont');
 var path = require('path');
 var assert = require("assert");
 var fs = require('fs');
+var os          = require('os');
+var platform    = os.platform();
+var sysFontDir  = 'c:/Windows/Fonts';
+
+if(platform.toLowerCase().indexOf('darwin') != -1) sysFontDir = '/Library/Fonts';
 
 describe('Try Install single existing specified font', function(){
   it('should return err object in callback and leave font in original directory', function(done){
@@ -18,7 +23,7 @@ describe('Try Install single existing specified font', function(){
       assert.equal(true, err !== 'undefined');
       assert.equal('Font already installed', err.message);
       assert.equal(true, fs.existsSync('./spec/temp-fonts-3/Martyric_PersonalUse.ttf'));
-      assert.equal(true, fs.existsSync('c:/Windows/Fonts/Martyric_PersonalUse.ttf'));
+      assert.equal(true, fs.existsSync(path.join(sysFontDir, 'Martyric_PersonalUse.ttf')));
       done();
     });
   });
@@ -41,7 +46,7 @@ describe('Try Install single existing specified font with options', function(){
       //if(err) console.log(err, err.stack);
       assert.equal(true, err !== 'undefined');
       assert.equal('Font already installed', err.message);
-      assert.equal(true, fs.existsSync('c:/Windows/Fonts/Martyric_PersonalUse.ttf'));
+      assert.equal(true, fs.existsSync(path.join(sysFontDir, 'Martyric_PersonalUse.ttf')));
       setTimeout(function () {
         assert.equal(false, fs.existsSync('./spec/temp-fonts-3/Silver Bellybutton Ring Reg.ttf'));
         done();

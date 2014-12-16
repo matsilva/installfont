@@ -2,6 +2,11 @@ var installfont = require('../lib/installfont');
 var path = require('path');
 var assert = require("assert");
 var fs = require('fs');
+var os          = require('os');
+var platform    = os.platform();
+var sysFontDir  = 'c:/Windows/Fonts';
+
+if(platform.toLowerCase().indexOf('darwin') != -1) sysFontDir = '/Library/Fonts';
 
 describe('Try Install all fonts in specified directory that already exist with opts param', function(){
   it('should return err object in callback and delete fonts in original directory', function(done){
@@ -23,7 +28,7 @@ describe('Try Install all fonts in specified directory that already exist with o
       assert.equal(true, err !== 'undefined');
       assert.equal('All fonts already installed', err.message);
       for(var j = 0; j < tempFilesByName.length; j++){
-          assert.equal(true, fs.existsSync(path.join('c:/Windows/Fonts', tempFilesByName[j])));
+          assert.equal(true, fs.existsSync(path.join(sysFontDir, tempFilesByName[j])));
       }
 
       setTimeout(function () {
@@ -59,7 +64,7 @@ describe('Try Install all fonts in specified directory that already exist', func
           assert.equal(true, fs.existsSync(tempFiles[i]));
       }
       for(var j = 0; j < tempFilesByName.length; j++){
-          assert.equal(true, fs.existsSync(path.join('c:/Windows/Fonts', tempFilesByName[j])));
+          assert.equal(true, fs.existsSync(path.join(sysFontDir, tempFilesByName[j])));
       }
       done();
     });

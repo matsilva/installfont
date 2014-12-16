@@ -1,7 +1,12 @@
 var installfont = require('../lib/installfont');
-var path = require('path');
-var assert = require("assert");
-var fs = require('fs');
+var path        = require('path');
+var assert      = require("assert");
+var fs          = require('fs');
+var os          = require('os');
+var platform    = os.platform();
+var sysFontDir  = 'c:/Windows/Fonts';
+
+if(platform.toLowerCase().indexOf('darwin') != -1) sysFontDir = '/Library/Fonts';
 
 describe('Install all fonts in specified directory with options', function(){
   it('should install fonts and delete fonts in original directory', function(done){
@@ -14,7 +19,8 @@ describe('Install all fonts in specified directory with options', function(){
     for (var i = 0; i < fontDir.length; i++) {
       tempFiles.push(path.join('./spec/temp-fonts-2', fontDir[i]));
       tempFilesByName.push(fontDir[i]);
-      fs.createReadStream(path.join('./spec/spec-fonts2', fontDir[i])).pipe(fs.createWriteStream(path.join('./spec/temp-fonts-2', fontDir[i])));
+      fs.createReadStream(path.join('./spec/spec-fonts2', fontDir[i]))
+        .pipe(fs.createWriteStream(path.join('./spec/temp-fonts-2', fontDir[i])));
     }
     var opts = {};
     opts.removeFonts = true;
@@ -22,7 +28,7 @@ describe('Install all fonts in specified directory with options', function(){
       if(err) console.log(err, err.stack);
 
       for(var j = 0; j < tempFilesByName.length; j++){
-          assert.equal(true, fs.existsSync(path.join('c:/Windows/Fonts', tempFilesByName[j])));
+          assert.equal(true, fs.existsSync(path.join(sysFontDir, tempFilesByName[j])));
       }
 
       setTimeout(function () {
@@ -56,7 +62,7 @@ describe('Install all fonts in specified directory', function(){
           assert.equal(true, fs.existsSync(tempFiles[i]));
       }
       for(var j = 0; j < tempFilesByName.length; j++){
-          assert.equal(true, fs.existsSync(path.join('c:/Windows/Fonts', tempFilesByName[j])));
+          assert.equal(true, fs.existsSync(path.join(sysFontDir, tempFilesByName[j])));
       }
       done();
     });
