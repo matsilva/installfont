@@ -1,7 +1,7 @@
 {
   "name": "installfont",
-  "version": "0.0.1",
-  "description": "Nodejs module for installing system fonts",
+  "version": "0.0.2",
+  "description": "Super easy nodejs system font installation",
   "author": "Mat Silva <askmatsilva@gmail.com>",
   "scripts": {
     "test": "mocha spec"
