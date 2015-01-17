@@ -8,6 +8,7 @@ It also is not opinionated about how you get the fonts on your machine.
 ### Compatible OS:
 * Mac OS
 * Windows
+* Ubuntu 14.0.4.1 LTS
 
 ###Assumptions
 

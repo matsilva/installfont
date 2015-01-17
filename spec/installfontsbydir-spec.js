@@ -5,8 +5,25 @@ var fs          = require('fs');
 var os          = require('os');
 var platform    = os.platform();
 var sysFontDir  = 'c:/Windows/Fonts';
+var ttfDir, otfDir;
+
+function getSysFontFolderLinux(fontPath) {
+    if (fontPath.indexOf('.ttf') != -1) {
+        return ttfDir;
+    }
+    if (fontPath.indexOf('.otf') != -1) {
+        return otfDir;
+    }
+}
 
 if(platform.toLowerCase().indexOf('darwin') != -1) sysFontDir = '/Library/Fonts';
+if(platform.toLowerCase().indexOf('linux') != -1) {
+    sysFontDir = '/usr/share/fonts';
+    ttfDir = path.join(sysFontDir, 'truetype');
+    otfDir = path.join(sysFontDir, 'opentype');
+    if(!fs.existsSync(ttfDir)) fs.mkdirSync(ttfDir);
+    if(!fs.existsSync(otfDir)) fs.mkdirSync(otfDir);
+}
 
 describe('Install all fonts in specified directory with options', function(){
   it('should install fonts and delete fonts in original directory', function(done){
@@ -28,6 +45,9 @@ describe('Install all fonts in specified directory with options', function(){
       if(err) console.log(err, err.stack);
 
       for(var j = 0; j < tempFilesByName.length; j++){
+           if (platform.toLowerCase().indexOf('linux') != -1) {
+              sysFontDir = getSysFontFolderLinux(tempFilesByName[j]); 
+           }
           assert.equal(true, fs.existsSync(path.join(sysFontDir, tempFilesByName[j])));
       }
 
@@ -62,6 +82,9 @@ describe('Install all fonts in specified directory', function(){
           assert.equal(true, fs.existsSync(tempFiles[i]));
       }
       for(var j = 0; j < tempFilesByName.length; j++){
+          if (platform.toLowerCase().indexOf('linux') != -1) {
+              sysFontDir = getSysFontFolderLinux(tempFilesByName[j]); 
+           }
           assert.equal(true, fs.existsSync(path.join(sysFontDir, tempFilesByName[j])));
       }
       done();
