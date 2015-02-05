@@ -3,6 +3,10 @@
   "version": "0.0.3",
   "description": "Super easy nodejs system font installation",
   "author": "Mat Silva <askmatsilva@gmail.com>",
+  "contributors": [{
+    "name": "Zach Sadler",
+    "email" "zaxcoding@gmail.com"
+    }],
   "scripts": {
     "test": "mocha spec"
   },
