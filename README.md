@@ -10,6 +10,8 @@ It also is not opinionated about how you get the fonts on your machine.
 * Windows
 * Ubuntu 14.0.4.1 LTS
 
+*Run as Admin on linux or OSX*
+
 ###Assumptions
 
 * Assumes font file(s) are downloaded to your machine, but not yet installed.
