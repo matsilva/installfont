@@ -1,3 +1,6 @@
+## 0.0.5 / 2015-4-27
+* Change isFolder to synchronous method
+
 ## 0.0.4 / 2015-2-05
 * Add path exists check
 
