@@ -1,3 +1,6 @@
+## 0.0.6 / 2015-4-27
+* Reset font count for multiple invocations *fix
+
 ## 0.0.5 / 2015-4-27
 * Change isFolder to synchronous method
 
