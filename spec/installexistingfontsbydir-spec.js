@@ -8,6 +8,14 @@ var sysFontDir  = 'c:/Windows/Fonts';
 
 if(platform.toLowerCase().indexOf('darwin') != -1) sysFontDir = '/Library/Fonts';
 
+if(platform.toLowerCase().indexOf('linux') != -1) {
+    sysFontDir = '/usr/share/fonts';
+    ttfDir = path.join(sysFontDir, 'truetype');
+    otfDir = path.join(sysFontDir, 'opentype');
+    if(!fs.existsSync(ttfDir)) fs.mkdirSync(ttfDir);
+    if(!fs.existsSync(otfDir)) fs.mkdirSync(otfDir);
+}
+
 describe('Try Install all fonts in specified directory that already exist with opts param', function(){
   it('should return err object in callback and delete fonts in original directory', function(done){
     this.timeout(0);
