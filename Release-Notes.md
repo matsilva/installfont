@@ -1,3 +1,7 @@
+## 0.0.7 / 2015-5-7
+* Force font extensions to lowercase before testing their index
+* Fix return callback instead of console.log
+
 ## 0.0.6 / 2015-4-27
 * Reset font count for multiple invocations *fix
 
