@@ -1,3 +1,6 @@
+## 0.0.8 / 2015-5-8
+* Immediately check if font path exists
+
 ## 0.0.7 / 2015-5-7
 * Force font extensions to lowercase before testing their index
 * Fix return callback instead of console.log
