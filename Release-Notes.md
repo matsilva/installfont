@@ -1,3 +1,6 @@
+## 0.0.9 / 2015-11-16
+* Fix increment font count if file or folder is not in system file
+
 ## 0.0.8 / 2015-5-8
 * Immediately check if font path exists
 
