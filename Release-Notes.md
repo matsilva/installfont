@@ -1,3 +1,6 @@
+## 0.0.10 / 2017-3-20
+* Fix callback if font directory is empty
+
 ## 0.0.9 / 2015-11-16
 * Fix increment font count if file or folder is not in system file
 
