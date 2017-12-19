@@ -1,6 +1,6 @@
 {
   "name": "installfont",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Super easy nodejs system font installation",
   "author": "Mat Silva <askmatsilva@gmail.com>",
   "contributors": [

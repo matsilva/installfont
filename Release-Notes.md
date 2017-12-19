@@ -1,3 +1,6 @@
+## 0.0.11 / 2017-12-18
+* Fix create font dir on linux during module function execution
+
 ## 0.0.10 / 2017-3-20
 * Fix callback if font directory is empty
 
