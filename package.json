@@ -3,10 +3,12 @@
   "version": "0.0.10",
   "description": "Super easy nodejs system font installation",
   "author": "Mat Silva <askmatsilva@gmail.com>",
-  "contributors": [{
-    "name": "Zach Sadler",
-    "email": "zaxcoding@gmail.com"
-    }],
+  "contributors": [
+    {
+      "name": "Zach Sadler",
+      "email": "zaxcoding@gmail.com"
+    }
+  ],
   "scripts": {
     "test": "mocha spec"
   },
@@ -27,5 +29,8 @@
     "ubuntu font"
   ],
   "private": false,
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "mkpath": "^1.0.0"
+  }
 }
