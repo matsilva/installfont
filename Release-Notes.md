@@ -1,3 +1,7 @@
+## 0.0.12 / 2018-2-4
+* Fix handle files that are not font files
+* Fix file name comparison
+
 ## 0.0.11 / 2017-12-18
 * Fix create font dir on linux during module function execution
 
